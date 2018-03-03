@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:composition>
+        <div class="nav">
+                <ul>
+                    <li class="active">
+                        <h:form><h:commandLink rendered="#{user != null}" action="user_post" value="Home"></h:commandLink></h:form>
+                        <h:form><h:commandLink rendered="#{user == null}" action="index" value="Home"></h:commandLink></h:form>
+                    </li>
+                    <li>
+                        <h:form> <h:commandLink rendered="#{user != null}" action="post" value="Add Post"></h:commandLink></h:form>  
+                    </li>
+                    <li>
+                       <a href="#">Service</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Works</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+           
+              <div class="clear"></div>
+         </div>
+    </ui:composition>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>My Post</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+
+        <ui:composition template="template/common/layout.xhtml">
+            <ui:define name="content">
+                <div class="content">
+
+                    <h:form id="form">
+                        <p:dataList value="#{blog.getAutorPost(user.userId)}" var="post" 
+                                    type="unordered" itemType="none" paginator="true" 
+                                    rows="5" styleClass="paginated">
+                            <f:facet name="header">
+                                My Post
+                            </f:facet>
+
+                            <article>
+
+                                <h1>#{post.title}</h1>
+                                <p>#{post.content}</p>
+                                <p style="font-size: 10px; margin: 0px; padding: 0px;">
+                                    <em>Author:#{post.autorName}</em>
+                                    <em>Posted Date:#{post.createdDate.toLocalDate()} 
+                                        #{post.createdDate.toLocalTime()}</em> 
+                                </p>
+                                <br/>
+                                <h:commandButton value="Edit" class="btn-update" action="#{posts.update(post.postId)}"/>
+                               <h:commandButton value="Delete" class ="btn-delete" action="#{posts.delete(post.postId)}"/>
+                                <br/>
+                                <br/>
+                                <br/>    
+                            </article>
+
+                        </p:dataList>
+
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+        <h:outputStylesheet name="layout.css" library="css"/>
+    </body>
+</html>

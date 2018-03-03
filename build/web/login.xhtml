@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Personal Blog</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="style.css" library="css"/>
+    </h:head>
+    <h:body>
+        <div class="login-page">
+            <div class="form">
+                <h:form class="register-form">
+                    <h2>Register</h2>
+                    <h:inputText value="#{account.user.userName}" a:placeholder="User Name" required="true"
+                                 requiredMessage="User Name is Required"/>
+                    <h:inputText value="#{account.user.email}" a:placeholder="Email Address" required="true"
+                                 requiredMessage="Email is Required"/>
+                    <h:inputSecret value="#{account.user.userPassword}" a:placeholder="Password" required="true"
+                                    requiredMessage="Password is Required"/>
+                    <h:commandButton class="form-input" value="Register" action ="#{account.register}" ></h:commandButton>
+                    <p class="message">Already registered? <a href="#">Sign In</a></p>
+                </h:form>
+                <h:form class="login-form">
+                    <h2>Login</h2>
+                     <h:inputText value="#{account.user.email}" a:placeholder="Email Address" required="true"
+                                 requiredMessage="Email is Required"/>
+                    <h:inputSecret value="#{account.user.userPassword}" a:placeholder="Password" required="true"
+                                    requiredMessage="Password is Required"/>
+                    <h:commandButton class="form-input" value="Login" action ="#{account.login}" ></h:commandButton>
+                    <p class="message">Not registered? <a href="#" id ="register">Create an account</a></p>
+                </h:form>
+            </div>
+        </div>
+        <h:outputScript name="js/jquery-3.3.1.min.js" />
+        
+        
+        
+        <h:outputScript name="js/login.js"/>
+    </h:body>
+</html>
