@@ -13,9 +13,9 @@ Blog that allows registering multiple users and posting, Using JSF 2.2, Sprint D
 + User comment on post
 
 ### App Architecture:
-Layared architeture
-Repository Pattern
-Domain Service Pattern
++ Layered architeture
++ Repository Pattern
++ Domain Service Pattern
 
 ### Made with:
 + Java 8
